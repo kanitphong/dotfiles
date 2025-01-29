@@ -1,7 +1,6 @@
 *
 !.gitignore
 !.tmux.conf
-!.config
 !.config/nvim
 !.config/bat
 !.config/wezterm
