@@ -1,6 +1,9 @@
 *
+.config/nvim/deps
+
 !.gitignore
 !.tmux.conf
 !.config/nvim
 !.config/bat
 !.config/wezterm
+!.config/starship
