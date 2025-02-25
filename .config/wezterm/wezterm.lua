@@ -80,5 +80,13 @@ config.hyperlink_rules = {
 	},
 }
 
+-- Key binding to toggle full screen mode
+config.keys = {
+	{
+		key = "f",
+		mods = "CTRL|CMD",
+		action = wezterm.action.ToggleFullScreen,
+	},
+}
 -- and finally, return the configuration to wezterm
 return config

@@ -1,20 +1,31 @@
+# History setup
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
 # Custom keys
 bindkey '^E' autosuggest-accept
+# completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-export HOMEBREW_NO_AUTO_UPDATE=1
+# Activate autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Activate syntax highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Starship
-export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
 eval "$(starship init zsh)"
 
-# # Load Git completion
-# zstyle ':completion:*:*:git:*' script $HOME/.config/zsh/git-completion.bash
-# fpath=($HOME/.config/zsh $fpath)
-# autoload -Uz compinit && compinit
+# NVM
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
 
 # GitHub Copilot
 eval "$(gh copilot alias -- zsh)"
@@ -26,20 +37,16 @@ eval $(thefuck --alias fk)
 # --- Zoxide (better cd) ---
 eval "$(zoxide init zsh)"
 
-# History setup
-#SAVEHIST=1000
-HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
-
 # fzf
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+eval "$(fzf --zsh)"
+source ~/fzf-git.sh/fzf-git.sh
 
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
 
 _fzf_compgen_path() {
   fd --hidden --exclude .git . "$1"
@@ -48,11 +55,6 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
-
-source ~/fzf-git.sh/fzf-git.sh
-
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 _fzf_comprun() {
  local command=$1
@@ -66,37 +68,7 @@ case "$command" in
   esac
 }
 
-# --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
-
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
-
-export BAT_THEME=tokyonight_night
-
-# export FZF_CTRL_T_OPTS="
-#   --preview 'bat -n --color=always {}'
-#   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # Include hidden files
-
-bindkey "ç" fzf-cd-widget # Fix for ALT+C on Mac
-
-# fd - cd to selected directory
-fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
-
-# fh - search in your command history and execute selected command
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
+# Extras Config
 
 # Tmux
 # Always work in a tmux session if Tmux is installed
@@ -106,19 +78,20 @@ if which tmux 2>&1 >/dev/null; then
   fi
 fi
 
-# Activate syntax highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Disable underline
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-# Change colors
-# export ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue
-# export ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue
-# export ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
+bindkey "ç" fzf-cd-widget # Fix for ALT+C on Mac
 
-# Activate autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# # fd - cd to selected directory
+# fd() {
+#   local dir
+#   dir=$(find ${1:-.} -path '*/\.*' -prune \
+#                   -o -type d -print 2> /dev/null | fzf +m) &&
+#   cd "$dir"
+# }
+
+# fh - search in your command history and execute selected command
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
 
 # Vi mode
 # ANSI cursor escape codes:
@@ -129,9 +102,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # \e[4 q: Steady underline cursor (non-blinking).
 # \e[5 q: Blinking bar cursor.
 # \e[6 q: Steady bar cursor (non-blinking).
+# Enable Zsh Vi mode
 bindkey -v
-export KEYTIMEOUT=1 # Makes switching modes quicker
-export VI_MODE_SET_CURSOR=true 
 
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]]; then
@@ -156,5 +128,17 @@ function vi-yank-xclip {
 
 zle -N vi-yank-xclip
 
+# yank to the system clipboard
 bindkey -M vicmd 'y' vi-yank-xclip
-bindkey -M viins 'jk' vi-cmd-mode
+
+watch() {
+  if [ -z "$1" ]; then
+    echo "Usage: watch <command>"
+    return 1
+  fi
+  while true; do
+    clear
+    eval $@
+    sleep 2
+  done
+}
