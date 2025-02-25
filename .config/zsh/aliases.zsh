@@ -1,8 +1,8 @@
 # System
-alias shutdown='sudo shutdown -h now'
-alias restart='sudo reboot' 
-alias suspend='sudo pm-suspend'
-alias sleep='pmset sleepnow'
+alias shutdownnow='shutdown -h now'
+alias restart='reboot' 
+alias suspend='pm-suspend'
+alias sleepnow='pmset sleepnow'
 alias c='clear'
 alias e='exit'
 
@@ -95,6 +95,8 @@ alias gqc='quick_commit'
 alias gqcp='quick_commit push'
 
 # Shortcuts
+alias reload-zsh='source ~/.zshrc'
+alias edit-zsh='nvim ~/.zshrc'
 alias t='tmux'
 alias v='nvim'
 
@@ -103,8 +105,8 @@ alias doc='cd $HOME/Documents'
 alias dow='cd $HOME/Downloads'
 
 # Better ls
-# alias ls='eza --all --icons=always'
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls='eza --all --icons=always'
+# alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 # Lazygit
 alias lg='lazygit'
