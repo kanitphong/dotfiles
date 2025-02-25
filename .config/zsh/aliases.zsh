@@ -1,8 +1,8 @@
 # System
-alias shutdown='sudo shutdown -h now'
-alias restart='sudo reboot' 
-alias suspend='sudo pm-suspend'
-alias sleep='pmset sleepnow'
+alias shutdownnow='shutdown -h now'
+alias restart='reboot' 
+alias suspend='pm-suspend'
+alias sleepnow='pmset sleepnow'
 alias c='clear'
 alias e='exit'
 

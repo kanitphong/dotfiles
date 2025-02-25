@@ -1,7 +1,12 @@
 # Custom keys
 bindkey '^E' autosuggest-accept
+# completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+# Remap Alt+L to move forward by word
+bindkey '^[l' forward-word
+# Remap Alt+H to move backward by word
+bindkey '^[h' backward-word
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -129,6 +134,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # \e[4 q: Steady underline cursor (non-blinking).
 # \e[5 q: Blinking bar cursor.
 # \e[6 q: Steady bar cursor (non-blinking).
+# Enable Zsh Vi mode
 bindkey -v
 export KEYTIMEOUT=1 # Makes switching modes quicker
 export VI_MODE_SET_CURSOR=true 
@@ -156,5 +162,17 @@ function vi-yank-xclip {
 
 zle -N vi-yank-xclip
 
+# yank to the system clipboard
 bindkey -M vicmd 'y' vi-yank-xclip
-bindkey -M viins 'jk' vi-cmd-mode
+
+watch() {
+  if [ -z "$1" ]; then
+    echo "Usage: watch <command>"
+    return 1
+  fi
+  while true; do
+    clear
+    eval $@
+    sleep 2
+  done
+}
