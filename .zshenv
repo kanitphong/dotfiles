@@ -39,3 +39,6 @@ export BAT_THEME=tokyonight_night
 # Vim
 export KEYTIMEOUT=1 # Makes switching modes quicker
 export VI_MODE_SET_CURSOR=true 
+
+# ZSH highlighters
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
