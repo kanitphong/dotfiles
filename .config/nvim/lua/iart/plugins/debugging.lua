@@ -21,42 +21,25 @@ return {
       'php',
     }
 
-    for _, language in ipairs(languages) do
-      if language == 'javascript' or language == 'typescript' or language == 'typescriptreact' or language == 'javascriptreact' then
-        dap.configurations[language] = {
-          {
-            type = 'pwa-node',
-            request = 'launch',
-            name = 'Launch file',
-            program = '${file}',
-            cwd = '${workspaceFolder}',
-          },
-          {
-            type = 'pwa-chrome',
-            name = 'Launch Chrome to debug client',
-            request = 'launch',
-            url = 'http://localhost',
-            sourceMaps = true,
-            protocol = 'inspector',
-            port = 9222,
-            webRoot = '${workspaceFolder}/src',
-            -- skip files from vite's hmr
-            skipFiles = { '**/node_modules/**/*', '**/@vite/*', '**/src/client/*', '**/src/*' },
-          },
-        }
-      end
+    dap.adapters['pwa-node'] = {
+      type = 'server',
+      host = 'localhost',
+      port = '${port}',
+      executable = {
+        command = 'node',
+        args = { os.getenv 'HOME' .. '/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js', '${port}' },
+      },
+    }
 
-      if language == 'php' then
-        dap.configurations[language] = {
-          {
-            name = 'Listen for Xdebug',
-            type = 'php',
-            request = 'launch',
-            port = 9003,
-          },
-        }
-      end
-    end
+    dap.configurations.javascript = {
+      {
+        type = 'pwa-node',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
+        cwd = '${workspaceFolder}',
+      },
+    }
 
     dapui.setup()
 
