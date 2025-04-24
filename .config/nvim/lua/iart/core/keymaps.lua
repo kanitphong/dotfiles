@@ -18,10 +18,24 @@ keymap.set('n', '<Leader>+', '<C-a>', { desc = 'Increment number' }) -- incremen
 keymap.set('n', '<Leader>-', '<C-x>', { desc = 'Decrement number' }) -- decrement
 
 -- window management
-keymap.set('n', '<Leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
-keymap.set('n', '<Leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontal
+keymap.set('n', '<Leader>s\\', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
+keymap.set('n', '<Leader>s-', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontal
 keymap.set('n', '<Leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal window
 keymap.set('n', '<Leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
+
+-- resize window below like tmux convert to vim keymaps hold the key to repeat
+keymap.set('n', '<Leader>sk', '<C-w>-', { desc = 'Resize window down' }) -- resize window up
+keymap.set('n', '<Leader>sj', '<C-w>+', { desc = 'Resize window up' }) -- resize window down
+keymap.set('n', '<Leader>sh', '<C-w><', { desc = 'Resize window left' }) -- resize window left
+keymap.set('n', '<Leader>sl', '<C-w>>', { desc = 'Resize window right' }) -- resize window right
+
+-- move selected line / block of text in visual mode
+keymap.set('v', 'J', ":move '>+1<CR>gv-gv", { desc = 'Move line down' })
+keymap.set('v', 'K', ":move '<-2<CR>gv-gv", { desc = 'Move line up' })
+
+-- navigate buffers
+keymap.set('n', '<S-l>', ':bnext<CR>', { desc = 'Next buffer' }) -- next buffer
+keymap.set('n', '<S-h>', ':bprevious<CR>', { desc = 'Previous buffer' }) -- previous buffer
 
 keymap.set('n', '<Leader>to', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
 keymap.set('n', '<Leader>tx', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
