@@ -1,0 +1,346 @@
+{
+  // Terminal
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.enableVisualBell": true,
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.env.osx": {},
+  // VIM
+  // Default Config
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.targets.enable": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-Space>"],
+      "commands": ["editor.action.triggerSuggest"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": true,
+    "<C-f>": false,
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false
+  },
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  // GitHub
+  "github.copilot.enable": {
+    "editor": true,
+    "inlineSuggest": true
+  },
+  // Git
+  "git.openRepositoryInParentFolders": "never",
+  "git.ignoreRebaseWarning": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  // My Config
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["g", "p", "d"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "p", "i"],
+      "commands": ["editor.action.peekImplementation"]
+    },
+    {
+      "before": ["g", "q"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
+      "before": ["g", "p", "t"],
+      "commands": ["editor.action.peekTypeDefinition"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // {
+    //   "before": ["<leader>", "m"],
+    //   "commands": ["bookmarks.toggle"]
+    // },
+    // {
+    //   "before": ["<leader>", "b"],
+    //   "commands": ["bookmarks.list"]
+    // },
+    {
+      "before": ["Q"], // Close current tab
+      "after": ["<C-w>", "q"]
+    },
+    {
+      "before": ["|"], // Split tab vertically
+      "after": ["<C-w>", "v"]
+    },
+    {
+      "before": ["_"], // Split tab horizontally
+      "after": ["<C-w>", "s"]
+    }
+  ],
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.duration": 250,
+  "vim.enableNeovim": true,
+  "vim.neovimUseConfigFile": true,
+  "vim.targets.bracketObjects.enable": false,
+  "vim.targets.smartQuotes.aIncludesSurroundingSpaces": false,
+  "vim.targets.smartQuotes.breakThroughLines": false,
+  "vim.targets.smartQuotes.enable": false,
+  "vim.cursorStylePerMode.insert": "line-thin",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block-outline",
+  "vim.foldfix": true,
+  // Editor
+  "editor.fontFamily": "MonoLisa, Menlo, Monaco, 'Courier New', monospace",
+  "editor.lineNumbers": "relative",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 24,
+  "editor.linkedEditing": true,
+  "editor.links": true,
+  "editor.wordBasedSuggestions": "off",
+  "editor.quickSuggestionsDelay": 1000000,
+  "editor.parameterHints.enabled": true,
+  "editor.fontWeight": "300",
+  "editor.cursorWidth": 5,
+  "editor.matchBrackets": "always",
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
+  "editor.minimap.enabled": false,
+  "editor.minimap.showSlider": "always",
+  "editor.accessibilitySupport": "off",
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\\\|:'\\\",.<>/?",
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.tabCompletion": "on",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.tabSize": 2,
+  "editor.inlineSuggest.enabled": true,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "line-thin",
+  "editor.guides.bracketPairs": "active",
+  "editor.largeFileOptimizations": false,
+  "editor.letterSpacing": 0.3,
+  "editor.renderWhitespace": "none",
+  "editor.rulers": [80],
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js" //class keyword
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  // Explorer
+  "explorer.autoReveal": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  // Ext config
+  "debug.disassemblyView.showSourceCode": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.validate.enable": false,
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.showExpandedAbbreviation": "never",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "hediet.vscode-drawio.resizeImages": null,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "mssql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
+  "mssql.autoDisableNonTSqlLanguageService": true,
+  "editor.minimap.renderCharacters": false,
+  "explorer.openEditors.visible": 1,
+  "files.trimTrailingWhitespace": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.hover.delay": 0,
+  "css.validate": false,
+  "extensions.ignoreRecommendations": true,
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // File type
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "j69.ejs-beautify"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "sqltools.useNodeRuntime": true,
+  "todohighlight.isEnable": true,
+  // Prettier
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "always",
+  "prettier.jsxSingleQuote": true,
+
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "6DA74AD7-FBD5-4846-A40D-753B9A754B82"
+    }
+  ],
+  "mssql.connections": [
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "server": "10.130.12.4",
+      "profileName": "CFW Server",
+      "trustServerCertificate": true,
+      "user": "upfdba",
+      "password": "",
+      "savePassword": true,
+      "database": "HWSQL",
+      "commandTimeout": 30,
+      "id": "5E6D0DB8-46E2-42E0-AC05-A7E5367B85D0",
+      "displayName": "CFW Server",
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "profileSource": 0
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "profileName": "Dev",
+      "server": "localhost",
+      "trustServerCertificate": true,
+      "user": "sa",
+      "password": "",
+      "savePassword": true,
+      "database": "",
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "id": "8780C07B-312D-4F63-9C71-CACF3A31B724"
+    }
+  ],
+  // Screencast
+  "screencastMode.fontSize": 32,
+  "screencastMode.mouseIndicatorSize": 40,
+  "screencastMode.verticalOffset": 10,
+  "screencastMode.mouseIndicatorColor": "#805AD5",
+  // Zen
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
+  // Search
+  "search.defaultViewMode": "tree",
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  // Window
+  "window.newWindowProfile": "Default",
+  "window.autoDetectHighContrast": false,
+  // Workbench
+  "workbench.sideBar.location": "right",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.enablePreview": false,
+  "workbench.navigationControl.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.editorAssociations": {
+    "*.png": "imagePreview.previewEditor"
+  }
+}
