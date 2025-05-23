@@ -1,4 +1,9 @@
 [
+  {
+    "command": "editor.action.triggerSuggest",
+    "key": "ctrl+space",
+    "when": "editorTextFocus"
+  },
   // VIM
   {
     "command": "editor.action.scrollLeftHover",
@@ -20,15 +25,80 @@
     "key": "l",
     "when": "editorHoverFocused"
   },
+  {
+    "command": "workbench.action.toggleEditorWidths",
+    "key": "space s m",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
   // Git
   {
-    "key": "space h shift+s",
     "command": "git.stage",
+    "key": "space h s",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
+    "command": "git.stageSelectedRanges",
+    "key": "space h s",
+    "when": "vim.mode == 'VisualLine' && editorTextFocus"
+  },
+  {
+    "command": "git.stageFile",
+    "key": "space h shift+s",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "git.revertChange",
+    "key": "space h r",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "git.revertSelectedRanges",
+    "key": "space h r",
+    "when": "vim.mode == 'VisualLine' && editorTextFocus"
+  },
+  {
+    "command": "git.unstage",
+    "key": "space h u",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "git.unstageSelectedRanges",
+    "key": "space h u",
+    "when": "vim.mode == 'VisualLine' && editorTextFocus"
+  },
+  {
+    "command": "git.unstageFile",
     "key": "space h shift+u",
-    "command": "git.stage",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "git.stageAll",
+    "key": "space h shift+a",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "workbench.action.editor.nextChange",
+    "key": "space h j",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "workbench.action.editor.previousChange",
+    "key": "space h k",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "git.commitStaged",
+    "key": "space h c",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "git.commitStaged",
+    "key": "space h shift+c",
+    "when": "vim.mode == 'VisualLine' && editorTextFocus"
+  },
+  {
+    "command": "git.commit.view.show",
+    "ket": "space h v",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   // Navigation
@@ -82,13 +152,33 @@
   },
   {
     "command": "workbench.action.splitEditor",
-    "key": "s h",
+    "key": "space s h",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "command": "workbench.action.splitEditorDown",
-    "key": "s v",
+    "key": "space s v",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  // {
+  //   "command": "workbench.action.previousEditor",
+  //   "key": "shift+h",
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
+  // {
+  //   "command": "workbench.action.nextEditor",
+  //   "key": "shift+l",
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
+  {
+    "command": "workbench.action.closeActiveEditor",
+    "key": "space x",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+  },
+  {
+    "command": "workbench.action.closeEditorsInGroup",
+    "key": "space q",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
   },
   // Coding
   {
@@ -98,17 +188,17 @@
   },
   {
     "command": "editor.action.moveLinesUpAction",
-    "key": "shift-k",
+    "key": "shift+k",
     "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
   {
     "command": "editor.action.moveLinesDownAction",
-    "key": "shift-j",
+    "key": "shift+j",
     "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
   {
     "command": "editor.action.showHover",
-    "key": "shift-k",
+    "key": "shift+k",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
@@ -214,7 +304,7 @@
       ]
     },
     "command": "runCommands",
-    "key": "shift-s",
+    "key": "shift+s",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
@@ -263,21 +353,10 @@
     "key": "space d c",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && inDebugMode && debugState == 'stopped'"
   },
-  // Git
   {
-    "command": "git.stageAll",
-    "key": "space h shift+s",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && gitOpenRepositoryCount > 0"
-  },
-  {
-    "command": "git.unstageAll",
-    "key": "space h shift+d",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && gitOpenRepositoryCount > 0"
-  },
-  {
-    "command": "git.stageHunk",
-    "key": "space h s",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && gitOpenRepositoryCount > 0"
+    "command": "workbench.action.debug.restart",
+    "key": "space d r",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && inDebugMode"
   },
   // Remap
   {
