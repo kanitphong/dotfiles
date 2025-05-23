@@ -14,31 +14,6 @@
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.targets.enable": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["<C-Space>"],
-      "commands": ["editor.action.triggerSuggest"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["K"],
-      "commands": ["lineBreakInsert"],
-      "silent": true
-    }
-  ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": true,
@@ -53,7 +28,7 @@
   // GitHub
   "github.copilot.enable": {
     "editor": true,
-    "inlineSuggest": true
+    "inlineSuggest": false
   },
   // Git
   "git.openRepositoryInParentFolders": "never",
@@ -64,7 +39,23 @@
   // My Config
   "vim.smartRelativeLine": true,
   "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-m>"],
+      "commands": [":nohl"]
+    }
+  ],
   "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-m>"],
+      "commands": [":nohl"]
+    },
     {
       "before": ["g", "p", "d"],
       "commands": ["editor.action.peekDefinition"]
@@ -97,10 +88,10 @@
       "before": ["g", "p", "t"],
       "commands": ["editor.action.peekTypeDefinition"]
     },
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.view.explorer"]
-    },
+    // {
+    //   "before": ["<leader>", "e"],
+    //   "commands": ["workbench.view.explorer"]
+    // },
     // {
     //   "before": ["<leader>", "m"],
     //   "commands": ["bookmarks.toggle"]
@@ -213,8 +204,12 @@
   "debug.disassemblyView.showSourceCode": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
+  "emmet.includeLanguages": {
+    "ejs": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
   "emmet.excludeLanguages": ["markdown"],
-  "emmet.showExpandedAbbreviation": "never",
+  "emmet.showExpandedAbbreviation": "always",
   "liveServer.settings.donotShowInfoMsg": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -233,7 +228,8 @@
 
   // File type
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.ejs": "html"
   },
 
   "[javascript]": {
@@ -265,6 +261,7 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+  "[sql]": { "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode" },
   "sqltools.useNodeRuntime": true,
   "todohighlight.isEnable": true,
   // Prettier
@@ -310,7 +307,54 @@
       "savePassword": true,
       "database": "",
       "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
-      "id": "8780C07B-312D-4F63-9C71-CACF3A31B724"
+      "id": "8780C07B-312D-4F63-9C71-CACF3A31B724",
+      "profileSource": 0,
+      "commandTimeout": 30
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "profileName": "CFW-UAT",
+      "server": "10.130.12.53",
+      "user": "MISUSER",
+      "password": "",
+      "savePassword": true,
+      "database": "HWSQL",
+      "trustServerCertificate": true,
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "id": "A53EF1D6-D777-4B68-9766-5368D468894E"
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "applicationIntent": "ReadWrite",
+      "profileName": "PO Import",
+      "server": "10.77.3.82",
+      "trustServerCertificate": true,
+      "user": "upfront",
+      "savePassword": true,
+      "password": "",
+      "database": "HWSQL",
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "id": "B0F78E0F-4EB8-4F0B-8C96-9B3E095DA042",
+      "profileSource": 0
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "applicationIntent": "ReadWrite",
+      "profileName": "POSCLOUD-UAT-TWD",
+      "server": "10.77.3.54",
+      "user": "upfdba",
+      "password": "",
+      "savePassword": true,
+      "database": "",
+      "trustServerCertificate": true,
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "id": "3239D23D-62E0-483A-993F-2F5CE875F5E3"
     }
   ],
   // Screencast
@@ -342,5 +386,7 @@
   "workbench.colorTheme": "GitHub Dark",
   "workbench.editorAssociations": {
     "*.png": "imagePreview.previewEditor"
-  }
+  },
+  "application.shellEnvironmentResolutionTimeout": 30,
+  "mssql.enableQueryHistoryCapture": false
 }
