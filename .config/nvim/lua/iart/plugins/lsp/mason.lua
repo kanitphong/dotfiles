@@ -19,6 +19,12 @@ return {
 
     local mason_tool_installer = require 'mason-tool-installer'
 
+    -- import cmp-nvim-lsp plugin
+    local cmp_nvim_lsp = require 'cmp_nvim_lsp'
+
+    -- used to enable autocompletion (assign to every lsp server config)
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
     -- import dapui
     local dapui = require 'dapui'
 
@@ -37,7 +43,6 @@ return {
       ensure_installed = {
         'javascript',
         'typescript',
-        'php',
       },
       handlers = {
         before = {
@@ -77,7 +82,6 @@ return {
         'emmet_ls',
         'prismals',
         'pyright',
-        'phpactor',
       },
     }
 
