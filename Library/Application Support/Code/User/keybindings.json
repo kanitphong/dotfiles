@@ -30,6 +30,16 @@
     "key": "space s m",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+  {
+    "command": "workbench.action.previousEditor",
+    "key": "space shift+h",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "command": "workbench.action.nextEditor",
+    "key": "space shift+l",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
   // Git
   {
     "command": "git.stage",
@@ -160,16 +170,6 @@
     "key": "space s v",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  // {
-  //   "command": "workbench.action.previousEditor",
-  //   "key": "shift+h",
-  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  // },
-  // {
-  //   "command": "workbench.action.nextEditor",
-  //   "key": "shift+l",
-  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  // },
   {
     "command": "workbench.action.closeActiveEditor",
     "key": "space x",
@@ -258,6 +258,46 @@
     "command": "editor.action.addSelectionToNextFindMatch",
     "key": "ctrl-n",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "command": "editor.action.peekDefinition",
+    "key": "space g p d",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "editor.action.showDefinitionPreviewHover",
+    "key": "space g h",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "editor.action.goToImplementation",
+    "key": "space g i",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "editor.action.peekImplementation",
+    "key": "space g p i",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "editor.action.quickFix",
+    "key": "space g q",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "editor.action.referenceSearch.trigger",
+    "key": "space g r",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "editor.action.goToTypeDefinition",
+    "key": "space g t",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "editor.action.peekTypeDefinition",
+    "key": "space g p t",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   // File Explorer
   {

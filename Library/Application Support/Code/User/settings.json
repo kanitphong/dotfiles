@@ -8,6 +8,18 @@
   "terminal.integrated.lineHeight": 1,
   "terminal.integrated.env.osx": {},
   // VIM
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-m>"],
+      "commands": [":nohl"]
+    }
+  ],
   // Default Config
   "vim.easymotion": true,
   "vim.incsearch": true,
@@ -39,80 +51,6 @@
   // My Config
   "vim.smartRelativeLine": true,
   "vim.useSystemClipboard": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<C-m>"],
-      "commands": [":nohl"]
-    }
-  ],
-  "vim.normalModeKeyBindings": [
-    {
-      "before": ["<C-m>"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["g", "p", "d"],
-      "commands": ["editor.action.peekDefinition"]
-    },
-    {
-      "before": ["g", "h"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
-    },
-    {
-      "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
-    },
-    {
-      "before": ["g", "p", "i"],
-      "commands": ["editor.action.peekImplementation"]
-    },
-    {
-      "before": ["g", "q"],
-      "commands": ["editor.action.quickFix"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.referenceSearch.trigger"]
-    },
-    {
-      "before": ["g", "t"],
-      "commands": ["editor.action.goToTypeDefinition"]
-    },
-    {
-      "before": ["g", "p", "t"],
-      "commands": ["editor.action.peekTypeDefinition"]
-    },
-    // {
-    //   "before": ["<leader>", "e"],
-    //   "commands": ["workbench.view.explorer"]
-    // },
-    // {
-    //   "before": ["<leader>", "m"],
-    //   "commands": ["bookmarks.toggle"]
-    // },
-    // {
-    //   "before": ["<leader>", "b"],
-    //   "commands": ["bookmarks.list"]
-    // },
-    {
-      "before": ["Q"], // Close current tab
-      "after": ["<C-w>", "q"]
-    },
-    {
-      "before": ["|"], // Split tab vertically
-      "after": ["<C-w>", "v"]
-    },
-    {
-      "before": ["_"], // Split tab horizontally
-      "after": ["<C-w>", "s"]
-    }
-  ],
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
