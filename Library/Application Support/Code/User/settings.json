@@ -1,6 +1,6 @@
 {
   // Terminal
-  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontFamily": "MesloLGS Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.enableVisualBell": true,
   "terminal.integrated.showExitAlert": false,
@@ -220,23 +220,6 @@
       "authenticationType": "SqlLogin",
       "connectTimeout": 30,
       "applicationName": "vscode-mssql",
-      "server": "10.130.12.4",
-      "profileName": "CFW Server",
-      "trustServerCertificate": true,
-      "user": "upfdba",
-      "password": "",
-      "savePassword": true,
-      "database": "HWSQL",
-      "commandTimeout": 30,
-      "id": "5E6D0DB8-46E2-42E0-AC05-A7E5367B85D0",
-      "displayName": "CFW Server",
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
-      "profileSource": 0
-    },
-    {
-      "authenticationType": "SqlLogin",
-      "connectTimeout": 30,
-      "applicationName": "vscode-mssql",
       "profileName": "Dev",
       "server": "localhost",
       "trustServerCertificate": true,
@@ -253,7 +236,41 @@
       "authenticationType": "SqlLogin",
       "connectTimeout": 30,
       "applicationName": "vscode-mssql",
-      "profileName": "CFW-UAT",
+      "applicationIntent": "ReadWrite",
+      "profileName": "CFW - PROD",
+      "server": "10.130.10.7",
+      "user": "MISUSER",
+      "password": "",
+      "database": "HWSQL",
+      "trustServerCertificate": true,
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "id": "51E6007F-8850-43DB-A5FC-82803149B22D",
+      "profileSource": 0,
+      "commandTimeout": 30,
+      "savePassword": false
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "server": "10.130.12.4",
+      "profileName": "CFW - DEV",
+      "trustServerCertificate": true,
+      "user": "upfdba",
+      "password": "",
+      "savePassword": true,
+      "database": "HWSQL",
+      "commandTimeout": 30,
+      "id": "5E6D0DB8-46E2-42E0-AC05-A7E5367B85D0",
+      "displayName": "CFW Server",
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "profileSource": 0
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "profileName": "CFW - UAT",
       "server": "10.130.12.53",
       "user": "MISUSER",
       "password": "",
@@ -261,14 +278,15 @@
       "database": "HWSQL",
       "trustServerCertificate": true,
       "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
-      "id": "A53EF1D6-D777-4B68-9766-5368D468894E"
+      "id": "A53EF1D6-D777-4B68-9766-5368D468894E",
+      "profileSource": 0
     },
     {
       "authenticationType": "SqlLogin",
       "connectTimeout": 30,
       "applicationName": "vscode-mssql",
       "applicationIntent": "ReadWrite",
-      "profileName": "PO Import",
+      "profileName": "POSCLOUD - DEV - TWD",
       "server": "10.77.3.82",
       "trustServerCertificate": true,
       "user": "upfront",
@@ -284,7 +302,7 @@
       "connectTimeout": 30,
       "applicationName": "vscode-mssql",
       "applicationIntent": "ReadWrite",
-      "profileName": "POSCLOUD-UAT-TWD",
+      "profileName": "POSCLOUD - UAT - TWD",
       "server": "10.77.3.54",
       "user": "upfdba",
       "password": "",
@@ -292,7 +310,8 @@
       "database": "",
       "trustServerCertificate": true,
       "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
-      "id": "3239D23D-62E0-483A-993F-2F5CE875F5E3"
+      "id": "3239D23D-62E0-483A-993F-2F5CE875F5E3",
+      "profileSource": 0
     }
   ],
   // Screencast
@@ -326,5 +345,6 @@
     "*.png": "imagePreview.previewEditor"
   },
   "application.shellEnvironmentResolutionTimeout": 30,
-  "mssql.enableQueryHistoryCapture": false
+  "mssql.enableQueryHistoryCapture": false,
+  "mssql.objectExplorer.groupBySchema": false
 }

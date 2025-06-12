@@ -24,10 +24,10 @@ keymap.set('n', '<Leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- 
 keymap.set('n', '<Leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
 -- resize window below like tmux convert to vim keymaps hold the key to repeat
-keymap.set('n', '<Leader>sk', '<C-w>-', { desc = 'Resize window down' }) -- resize window up
-keymap.set('n', '<Leader>sj', '<C-w>+', { desc = 'Resize window up' }) -- resize window down
-keymap.set('n', '<Leader>sh', '<C-w><', { desc = 'Resize window left' }) -- resize window left
-keymap.set('n', '<Leader>sl', '<C-w>>', { desc = 'Resize window right' }) -- resize window right
+keymap.set('n', '<Leader>sj', '<C-w>-2', { desc = 'Resize window down' }) -- resize window up
+keymap.set('n', '<Leader>sk', '<C-w>+2', { desc = 'Resize window up' }) -- resize window down
+keymap.set('n', '<Leader>sh', '<C-w><2', { desc = 'Resize window left' }) -- resize window left
+keymap.set('n', '<Leader>sl', '<C-w>>2', { desc = 'Resize window right' }) -- resize window right
 
 -- move selected line / block of text in visual mode
 keymap.set('v', 'J', ":move '>+1<CR>gv-gv", { desc = 'Move line down' })
