@@ -40,11 +40,6 @@
     "key": "space shift+l",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  {
-    "command": "workbench.action.files.save",
-    "key": "space w",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
   // Git
   {
     "command": "git.stage",

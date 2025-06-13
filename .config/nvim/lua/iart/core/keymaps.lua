@@ -56,15 +56,10 @@ keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Vertical scroll up and center' })
 keymap.set('n', 'n', 'nzz', { desc = 'Find next and center' })
 keymap.set('n', 'N', 'Nzz', { desc = 'Find previous and center' })
 -- Buffers
--- keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
--- keymap.set('n', '<S-Tab>', ':bprevious<CR>', { desc = 'Previous buffer' })
--- keymap.set('n', '<Leader>x', ':Bdelete!<CR>', { desc = 'Close buffer' })
--- keymap.set('n', '<Leader>b', '<cmd>enew<CR>', { desc = 'New buffer' })
-local opts = { noremap = true, silent = true }
-keymap.set('n', '<Tab>', ':bnext<CR>', opts)
-keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-keymap.set('n', '<Leader>x', ':bdelete!<CR>', opts) -- close buffer
-keymap.set('n', '<Leader>b', '<cmd> enew <CR>', opts) -- new buffer
+keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
+keymap.set('n', '<S-Tab>', ':bprevious<CR>', { desc = 'Previous buffer' })
+keymap.set('n', '<Leader>x', ':bdelete!<CR>', { desc = 'Close buffer' })
+keymap.set('n', '<Leader>b', '<cmd>enew<CR>', { desc = 'New buffer' })
 
 keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { desc = 'No operation', silent = true }) -- no operation
 keymap.set('n', '<Leader>lw', '<cmd>set wrap!<CR>', { desc = 'Toggle line wrap' }) -- toggle line wrap
