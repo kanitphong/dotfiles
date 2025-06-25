@@ -22,6 +22,12 @@ return {
           },
         },
       },
+      pickers = {
+        find_files = {
+          hidden = true, -- <-- add this!
+          no_ignore = true, -- <-- add this if your .env is gitignored
+        },
+      },
     }
 
     telescope.load_extension 'fzf'

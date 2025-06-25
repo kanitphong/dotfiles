@@ -40,6 +40,11 @@
     "key": "space shift+l",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+  {
+    "command": "workbench.action.files.save",
+    "key": "ctrl+s",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
   // Git
   {
     "command": "git.stage",
@@ -168,6 +173,16 @@
   {
     "command": "workbench.action.splitEditorDown",
     "key": "space s v",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "command": "workbench.action.splitEditor",
+    "key": "space s \\",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "command": "workbench.action.splitEditorDown",
+    "key": "space s -",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {

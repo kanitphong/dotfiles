@@ -39,6 +39,10 @@
   },
   // GitHub
   "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
     "editor": true,
     "inlineSuggest": false
   },
@@ -56,6 +60,8 @@
   "vim.highlightedyank.duration": 250,
   "vim.enableNeovim": true,
   "vim.neovimUseConfigFile": true,
+  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+  "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.targets.bracketObjects.enable": false,
   "vim.targets.smartQuotes.aIncludesSurroundingSpaces": false,
   "vim.targets.smartQuotes.breakThroughLines": false,
@@ -191,7 +197,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "j69.ejs-beautify"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -220,22 +226,6 @@
       "authenticationType": "SqlLogin",
       "connectTimeout": 30,
       "applicationName": "vscode-mssql",
-      "profileName": "Dev",
-      "server": "localhost",
-      "trustServerCertificate": true,
-      "user": "sa",
-      "password": "",
-      "savePassword": true,
-      "database": "",
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
-      "id": "8780C07B-312D-4F63-9C71-CACF3A31B724",
-      "profileSource": 0,
-      "commandTimeout": 30
-    },
-    {
-      "authenticationType": "SqlLogin",
-      "connectTimeout": 30,
-      "applicationName": "vscode-mssql",
       "applicationIntent": "ReadWrite",
       "profileName": "CFW - PROD",
       "server": "10.130.10.7",
@@ -247,24 +237,7 @@
       "id": "51E6007F-8850-43DB-A5FC-82803149B22D",
       "profileSource": 0,
       "commandTimeout": 30,
-      "savePassword": false
-    },
-    {
-      "authenticationType": "SqlLogin",
-      "connectTimeout": 30,
-      "applicationName": "vscode-mssql",
-      "server": "10.130.12.4",
-      "profileName": "CFW - DEV",
-      "trustServerCertificate": true,
-      "user": "upfdba",
-      "password": "",
-      "savePassword": true,
-      "database": "HWSQL",
-      "commandTimeout": 30,
-      "id": "5E6D0DB8-46E2-42E0-AC05-A7E5367B85D0",
-      "displayName": "CFW Server",
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
-      "profileSource": 0
+      "savePassword": true
     },
     {
       "authenticationType": "SqlLogin",
@@ -280,6 +253,22 @@
       "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
       "id": "A53EF1D6-D777-4B68-9766-5368D468894E",
       "profileSource": 0
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "profileName": "Dev",
+      "server": "localhost",
+      "trustServerCertificate": true,
+      "user": "sa",
+      "password": "",
+      "savePassword": true,
+      "database": "",
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "id": "8780C07B-312D-4F63-9C71-CACF3A31B724",
+      "profileSource": 0,
+      "commandTimeout": 30
     },
     {
       "authenticationType": "SqlLogin",
@@ -311,6 +300,23 @@
       "trustServerCertificate": true,
       "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
       "id": "3239D23D-62E0-483A-993F-2F5CE875F5E3",
+      "profileSource": 0
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "server": "10.130.12.4",
+      "profileName": "CFW - DEV",
+      "trustServerCertificate": true,
+      "user": "upfdba",
+      "password": "",
+      "savePassword": true,
+      "database": "HWSQL",
+      "commandTimeout": 30,
+      "id": "5E6D0DB8-46E2-42E0-AC05-A7E5367B85D0",
+      "displayName": "CFW Server",
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
       "profileSource": 0
     }
   ],
