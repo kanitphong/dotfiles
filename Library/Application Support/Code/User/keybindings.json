@@ -47,6 +47,16 @@
   },
   // Git
   {
+    "command": "workbench.action.editor.nextChange",
+    "key": "] h",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "command": "workbench.action.editor.previousChange",
+    "key": "[ h",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
     "command": "git.stage",
     "key": "space h s",
     "when": "vim.mode == 'Normal' && editorTextFocus"
@@ -57,8 +67,8 @@
     "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
   {
-    "command": "git.stageFile",
-    "key": "space h shift+s",
+    "command": "git.stageAll",
+    "key": "space h S",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
@@ -77,43 +87,13 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    "command": "git.unstageSelectedRanges",
+    "command": "git.unstage",
     "key": "space h u",
     "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
   {
-    "command": "git.unstageFile",
-    "key": "space h shift+u",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "command": "git.stageAll",
-    "key": "space h shift+a",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "command": "workbench.action.editor.nextChange",
-    "key": "space h j",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "command": "workbench.action.editor.previousChange",
-    "key": "space h k",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "command": "git.commitStaged",
-    "key": "space h c",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "command": "git.commitStaged",
-    "key": "space h shift+c",
-    "when": "vim.mode == 'VisualLine' && editorTextFocus"
-  },
-  {
-    "command": "git.commit.view.show",
-    "ket": "space h v",
+    "command": "git.unstageAll",
+    "key": "space h U",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   // Navigation

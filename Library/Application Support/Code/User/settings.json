@@ -205,7 +205,7 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
-  "[sql]": { "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode" },
+  "[sql]": { "editor.defaultFormatter": "ms-mssql.mssql" },
   "sqltools.useNodeRuntime": true,
   "todohighlight.isEnable": true,
   // Prettier
@@ -346,11 +346,18 @@
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "Default Dark+",
   "workbench.editorAssociations": {
     "*.png": "imagePreview.previewEditor"
   },
   "application.shellEnvironmentResolutionTimeout": 30,
   "mssql.enableQueryHistoryCapture": false,
-  "mssql.objectExplorer.groupBySchema": false
+  "mssql.objectExplorer.groupBySchema": false,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "window.titleBarStyle": "custom",
+  "terminal.integrated.gpuAcceleration": "off",
+  "window.systemColorTheme": "dark",
+  "window.autoDetectColorScheme": false
 }
