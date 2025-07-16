@@ -39,7 +39,7 @@
   },
   // GitHub
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": true,
     "scminput": false,
@@ -159,8 +159,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "hediet.vscode-drawio.resizeImages": null,
   "diffEditor.hideUnchangedRegions.enabled": true,
-  "mssql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
-  "mssql.autoDisableNonTSqlLanguageService": true,
   "editor.minimap.renderCharacters": false,
   "explorer.openEditors.visible": 1,
   "files.trimTrailingWhitespace": true,
@@ -205,7 +203,11 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
-  "[sql]": { "editor.defaultFormatter": "ms-mssql.mssql" },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma",
+    "editor.formatOnSave": true
+  },
+  "[sql]": { "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode" },
   "sqltools.useNodeRuntime": true,
   "todohighlight.isEnable": true,
   // Prettier
@@ -219,6 +221,18 @@
     {
       "name": "ROOT",
       "id": "6DA74AD7-FBD5-4846-A40D-753B9A754B82"
+    },
+    {
+      "name": "CFW",
+      "color": "#B80000",
+      "id": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
+      "parentId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82"
+    },
+    {
+      "name": "TWD",
+      "color": "#EB0000",
+      "id": "C3F9C37B-81C7-441D-846E-30545B8993A0",
+      "parentId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82"
     }
   ],
   "mssql.connections": [
@@ -233,7 +247,7 @@
       "password": "",
       "database": "HWSQL",
       "trustServerCertificate": true,
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "groupId": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
       "id": "51E6007F-8850-43DB-A5FC-82803149B22D",
       "profileSource": 0,
       "commandTimeout": 30,
@@ -250,9 +264,10 @@
       "savePassword": true,
       "database": "HWSQL",
       "trustServerCertificate": true,
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "groupId": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
       "id": "A53EF1D6-D777-4B68-9766-5368D468894E",
-      "profileSource": 0
+      "profileSource": 0,
+      "commandTimeout": 30
     },
     {
       "authenticationType": "SqlLogin",
@@ -282,7 +297,7 @@
       "savePassword": true,
       "password": "",
       "database": "HWSQL",
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "groupId": "C3F9C37B-81C7-441D-846E-30545B8993A0",
       "id": "B0F78E0F-4EB8-4F0B-8C96-9B3E095DA042",
       "profileSource": 0
     },
@@ -298,8 +313,25 @@
       "savePassword": true,
       "database": "",
       "trustServerCertificate": true,
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "groupId": "C3F9C37B-81C7-441D-846E-30545B8993A0",
       "id": "3239D23D-62E0-483A-993F-2F5CE875F5E3",
+      "profileSource": 0
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "applicationIntent": "ReadWrite",
+      "profileName": "POSHQ",
+      "server": "10.130.12.5",
+      "user": "upfdba",
+      "password": "",
+      "savePassword": true,
+      "trustServerCertificate": true,
+      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "id": "591151D7-6A68-4FF3-BE69-99D5FD49548C",
+      "database": "UPFPOS",
+      "commandTimeout": 30,
       "profileSource": 0
     },
     {
@@ -309,17 +341,21 @@
       "server": "10.130.12.4",
       "profileName": "CFW - DEV",
       "trustServerCertificate": true,
-      "user": "upfdba",
+      "user": "MISUSER",
       "password": "",
       "savePassword": true,
-      "database": "HWSQL",
+      "database": "",
       "commandTimeout": 30,
       "id": "5E6D0DB8-46E2-42E0-AC05-A7E5367B85D0",
       "displayName": "CFW Server",
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "groupId": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
       "profileSource": 0
     }
   ],
+  "mssql.enableQueryHistoryCapture": false,
+  "mssql.objectExplorer.groupBySchema": false,
+  "mssql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
+  "mssql.autoDisableNonTSqlLanguageService": true,
   // Screencast
   "screencastMode.fontSize": 32,
   "screencastMode.mouseIndicatorSize": 40,
@@ -351,13 +387,12 @@
     "*.png": "imagePreview.previewEditor"
   },
   "application.shellEnvironmentResolutionTimeout": 30,
-  "mssql.enableQueryHistoryCapture": false,
-  "mssql.objectExplorer.groupBySchema": false,
   "workbench.colorCustomizations": {
     "terminal.background": "#00000000"
   },
   "window.titleBarStyle": "custom",
   "terminal.integrated.gpuAcceleration": "off",
   "window.systemColorTheme": "dark",
-  "window.autoDetectColorScheme": false
+  "window.autoDetectColorScheme": false,
+  "docker.extension.enableComposeLanguageServer": false
 }
