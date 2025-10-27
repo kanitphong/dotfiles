@@ -132,14 +132,17 @@ zle -N vi-yank-xclip
 bindkey -M vicmd 'y' vi-yank-xclip
 
 watch() {
+  sec="$1"
+  shift
+  cmd="$@"
   if [ -z "$1" ]; then
     echo "Usage: watch <command>"
     return 1
   fi
   while true; do
     clear
-    eval $@
-    sleep 2
+    eval "$cmd"
+    sleep "$sec"
   done
 }
 

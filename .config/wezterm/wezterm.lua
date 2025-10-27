@@ -8,8 +8,9 @@ local config = wezterm.config_builder()
 config.default_cursor_style = "SteadyBar"
 config.automatically_reload_config = true
 
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 19
+-- config.font = wezterm.font("MesloLGLDZ Nerd Font Mono")
+config.font = wezterm.font("MonoLisa")
+config.font_size = 16
 
 config.enable_tab_bar = false
 

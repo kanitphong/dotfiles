@@ -13,3 +13,4 @@ setopt HIST_IGNORE_ALL_DUPS
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/usr/local/opt/ffmpeg@7/bin:$PATH"

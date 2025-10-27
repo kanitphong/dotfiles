@@ -30,71 +30,74 @@
     "key": "space s m",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  {
-    "command": "workbench.action.previousEditor",
-    "key": "space shift+h",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "command": "workbench.action.nextEditor",
-    "key": "space shift+l",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
+  // {
+  //   "command": "workbench.action.previousEditor",
+  //   "key": "space shift+h",
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
+  // {
+  //   "command": "workbench.action.nextEditor",
+  //   "key": "space shift+l",
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
   {
     "command": "workbench.action.files.save",
     "key": "ctrl+s",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   // Git
+  // Git Graph
   {
+    "key": "space g l",
+    "command": "git-graph.view",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+  },
+  // Gitsigns-like Navigation
+  {
+    "key": "space ] h",
     "command": "workbench.action.editor.nextChange",
-    "key": "] h",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
+    "key": "space [ h",
     "command": "workbench.action.editor.previousChange",
-    "key": "[ h",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+  // Gitsigns-like Actions
   {
+    "key": "space h s",
     "command": "git.stage",
-    "key": "space h s",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
+    "key": "space h s",
     "command": "git.stageSelectedRanges",
-    "key": "space h s",
     "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
   {
+    "key": "space h shift+s",
     "command": "git.stageAll",
-    "key": "space h S",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    "command": "git.revertChange",
-    "key": "space h r",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "command": "git.revertSelectedRanges",
-    "key": "space h r",
-    "when": "vim.mode == 'VisualLine' && editorTextFocus"
-  },
-  {
-    "command": "git.unstage",
     "key": "space h u",
+    "command": "git.unstage",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    "command": "git.unstage",
     "key": "space h u",
-    "when": "vim.mode == 'VisualLine' && editorTextFocus"
+    "command": "git.unstageSelectedRanges",
+    "when": "vim.mode == 'Visual' && editorTextFocus"
   },
   {
+    "key": "space h shift+u",
     "command": "git.unstageAll",
-    "key": "space h U",
     "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space h r",
+    "command": "git.revertSelectedRanges",
+    "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
   // Navigation
   {
