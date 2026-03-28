@@ -12,6 +12,8 @@
 [delta]
   navigate = true
   side-by-side = true
+  features = decorations
+  syntax-theme = GitHub
 [diff]
   tool = nvimdiff
 [difftool "nvimdiff"]
