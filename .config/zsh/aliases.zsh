@@ -99,6 +99,7 @@ alias reload-zsh='source ~/.zshrc'
 alias edit-zsh='nvim ~/.zshrc'
 alias t='tmux'
 alias v='nvim'
+alias k='kubectl'
 
 # Folders
 alias doc='cd $HOME/Documents'

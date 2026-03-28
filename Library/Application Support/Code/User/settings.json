@@ -13,12 +13,14 @@
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.hover.delay": 0,
   "workbench.editorAssociations": {
-    "*.png": "imagePreview.previewEditor"
+    "*.png": "imagePreview.previewEditor",
   },
+  "workbench.activityBar.compact": true,
+  "workbench.activityBar.location": "top",
   // Search
   "search.defaultViewMode": "tree",
   // Terminal
@@ -40,28 +42,28 @@
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
+      "after": ["<Esc>"],
+    },
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "d"],
-      "after": ["d", "d"]
+      "after": ["d", "d"],
     },
     {
       "before": ["<C-m>"],
-      "commands": [":nohl"]
-    }
+      "commands": [":nohl"],
+    },
   ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-f>": false
+    "<C-f>": false,
   },
   // To improve performance
   "extensions.ignoreRecommendations": true,
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
   },
 
   // GitHub
@@ -69,12 +71,12 @@
     "*": true,
     "plaintext": false,
     "markdown": true,
-    "scminput": false
+    "scminput": false,
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Be extremely detailed with the file changes and the reason for the change. Add lots of emojis."
-    }
+      "text": "Be extremely detailed with the file changes and the reason for the change. Add lots of emojis.",
+    },
   ],
   // "github.copilot.nextEditSuggestions.enabled": false,
   // Git
@@ -103,7 +105,7 @@
   "editor.quickSuggestions": {
     "comments": "on",
     "strings": "on",
-    "other": "on"
+    "other": "on",
   },
   "editor.minimap.enabled": false,
   "editor.minimap.showSlider": "always",
@@ -132,11 +134,11 @@
           "keyword", //import, export, return…
           "constant", //String, Number, Boolean…, this, super
           "storage.modifier", //static keyword
-          "storage.type.class.js" //class keyword
+          "storage.type.class.js", //class keyword
         ],
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": [
@@ -146,13 +148,13 @@
           "constant.numeric.css",
           "keyword.other.unit.px.css",
           "constant.numeric.decimal.js",
-          "constant.numeric.json"
+          "constant.numeric.json",
         ],
         "settings": {
-          "fontStyle": ""
-        }
-      }
-    ]
+          "fontStyle": "",
+        },
+      },
+    ],
   },
 
   // Ext config
@@ -161,7 +163,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
 
   "emmet.includeLanguages": {
-    "ejs": "html"
+    "ejs": "html",
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.excludeLanguages": ["markdown"],
@@ -176,20 +178,20 @@
   // File type
   "files.associations": {
     "*.css": "tailwindcss",
-    "*.ejs": "html"
+    "*.ejs": "html",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[sql]": {
     "editor.defaultFormatter": "cweijan.vscode-database-client2"
@@ -201,38 +203,44 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
-      "strings": true
+      "strings": true,
     },
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // SQL Server
   "mssql.connectionGroups": [
     {
       "name": "ROOT",
-      "id": "6DA74AD7-FBD5-4846-A40D-753B9A754B82"
+      "id": "ROOT",
     },
     {
       "name": "CFW",
       "color": "#B80000",
       "id": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
-      "parentId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82"
+      "parentId": "ROOT",
     },
     {
       "name": "TWD",
       "color": "#EB0000",
       "id": "C3F9C37B-81C7-441D-846E-30545B8993A0",
-      "parentId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82"
-    }
+      "parentId": "ROOT",
+    },
+    {
+      "name": "CDS",
+      "color": "#B146C2",
+      "id": "95D96F3C-F6C9-4C4F-917C-7F8F02AB7F2A",
+      "parentId": "ROOT",
+    },
   ],
   "mssql.connections": [
     {
@@ -251,7 +259,7 @@
       "profileSource": 0,
       "commandTimeout": 30,
       "savePassword": true,
-      "encrypt": "Mandatory"
+      "encrypt": "Mandatory",
     },
     {
       "authenticationType": "SqlLogin",
@@ -269,7 +277,7 @@
       "profileSource": 0,
       "commandTimeout": 30,
       "emptyPasswordInput": false,
-      "encrypt": "Mandatory"
+      "encrypt": "Mandatory",
     },
     {
       "authenticationType": "SqlLogin",
@@ -282,10 +290,10 @@
       "password": "",
       "savePassword": true,
       "database": "",
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "groupId": "ROOT",
       "id": "8780C07B-312D-4F63-9C71-CACF3A31B724",
       "profileSource": 0,
-      "commandTimeout": 30
+      "commandTimeout": 30,
     },
     {
       "authenticationType": "SqlLogin",
@@ -303,7 +311,7 @@
       "database": "",
       "commandTimeout": 30,
       "encrypt": "Mandatory",
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -319,7 +327,7 @@
       "database": "HWSQL",
       "groupId": "C3F9C37B-81C7-441D-846E-30545B8993A0",
       "id": "B0F78E0F-4EB8-4F0B-8C96-9B3E095DA042",
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -335,7 +343,7 @@
       "trustServerCertificate": true,
       "groupId": "C3F9C37B-81C7-441D-846E-30545B8993A0",
       "id": "3239D23D-62E0-483A-993F-2F5CE875F5E3",
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -348,11 +356,11 @@
       "password": "",
       "savePassword": true,
       "trustServerCertificate": true,
-      "groupId": "6DA74AD7-FBD5-4846-A40D-753B9A754B82",
+      "groupId": "ROOT",
       "id": "591151D7-6A68-4FF3-BE69-99D5FD49548C",
       "database": "UPFPOS",
       "commandTimeout": 30,
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -370,39 +378,55 @@
       "displayName": "CFW Server",
       "groupId": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
       "profileSource": 0,
-      "encrypt": "Mandatory"
-    }
+      "encrypt": "Mandatory",
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "applicationIntent": "ReadWrite",
+      "server": "10.122.218.4",
+      "database": "",
+      "user": "DEVELOPDB",
+      "password": "",
+      "commandTimeout": 30,
+      "encrypt": "Mandatory",
+      "groupId": "95D96F3C-F6C9-4C4F-917C-7F8F02AB7F2A",
+      "trustServerCertificate": true,
+      "id": "3DA757EE-E49B-45A5-8E6E-76238520A3EB",
+      "profileSource": 0,
+      "savePassword": true,
+    },
   ],
   "mssql.enableQueryHistoryCapture": false,
   "mssql.objectExplorer.groupBySchema": false,
   "mssql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
   "mssql.autoDisableNonTSqlLanguageService": true,
   "task.problemMatchers.neverPrompt": {
-    "bun": true
+    "bun": true,
   },
-  "chat.viewSessions.orientation": "stacked",
   "chat.agent.maxRequests": 50,
   "chat.tools.terminal.autoApprove": {
     "bun test": {
       "approve": true,
-      "matchCommandLine": true
+      "matchCommandLine": true,
     },
     "python3 bank_reconcile_bbg_scb.py --help": {
       "approve": true,
-      "matchCommandLine": true
+      "matchCommandLine": true,
     },
     "pip3": true,
     "python3 -m venv venv": {
       "approve": true,
-      "matchCommandLine": true
+      "matchCommandLine": true,
     },
     "python bank_reconcile_bbg_scb.py --help": {
       "approve": true,
-      "matchCommandLine": true
+      "matchCommandLine": true,
     },
     "python bank_reconcile_bbg_scb.py \\\n  --statement \"Statement - Jun 2025 (ไทยพานิช).pdf\" \\\n  --tb \"BBG TB 0668.xlsx\" \\\n  --out-excel \"BBG_TB0668_Annotated_ZONAL_PERPAGE.xlsx\" \\\n  --out-pdf \"Statement_Jun2025_Annotated_ZONAL_PERPAGE.pdf\" \\\n  --month 6 --year 2025": {
       "approve": true,
-      "matchCommandLine": true
+      "matchCommandLine": true,
     },
     "bun": true,
     "docker-compose": true,
@@ -410,7 +434,7 @@
     "docker run": true,
     "ls -la /Users/kannitphong/Developer/playground/bank-rec/frontend/ | grep -E \"(package-lock|bun\\.lock)\"": {
       "approve": true,
-      "matchCommandLine": true
+      "matchCommandLine": true,
     },
     "npm install": true,
     "docker compose": true,
@@ -424,6 +448,7 @@
     "mkdir": true,
     "rmdir": true,
     "rm": true,
-    "tsc": true
+    "tsc": true,
   },
+  "chat.viewSessions.orientation": "stacked"
 }
