@@ -74,6 +74,10 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash show --text'
+
+# Claude
+alias claude-personal='CLAUDE_CONFIG_DIR=~/.claude-personal claude'
+
 # Function to commit with ticket ID from current branch, with optional push
 quick_commit() {
   local branch_name ticket_id commit_message push_flag

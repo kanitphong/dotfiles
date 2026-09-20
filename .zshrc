@@ -14,3 +14,12 @@ setopt HIST_IGNORE_ALL_DUPS
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/usr/local/opt/ffmpeg@7/bin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/kannitphong/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+export PATH="/Users/kannitphong/.local/bin:$PATH"
+# GO
+export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="/usr/local/opt/libpq/bin:$PATH"

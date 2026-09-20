@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-  name = iArt
-  email = kanitphong.s@icloud.com
+	name = Kanitphong Sakonsinsiri
+	email = sakanitphong@central.co.th
 [init]
 	defaultBranch = main
 [core]

@@ -70,8 +70,10 @@ case "$command" in
 # Tmux
 # Always work in a tmux session if Tmux is installed
 if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "tmux-256color" ] && [  $TERM != "tmux" ]; then
-    tmux attach -t default || tmux new -s default; exit
+  if [ "$TERM_PROGRAM" != "kiro" ]; then
+    if [ $TERM != "tmux-256color" ] && [  $TERM != "tmux" ]; then
+      tmux attach -t default || tmux new -s default; exit
+    fi
   fi
 fi
 
