@@ -30,9 +30,12 @@
   "terminal.integrated.showExitAlert": false,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.lineHeight": 1,
-  "terminal.integrated.env.osx": {},
+  "terminal.integrated.env.osx": {
+    "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "1",
+  },
   "terminal.integrated.defaultProfile.osx": "tmux",
   "terminal.integrated.shellIntegration.environmentReporting": false,
+
   // VIM
   "vim.easymotion": true,
   "vim.incsearch": true,
@@ -74,7 +77,7 @@
     "scminput": false,
     "sql": false,
     "typescript": false,
-    "dotenv": false
+    "dotenv": false,
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
@@ -261,7 +264,7 @@
       "profileSource": 0,
       "commandTimeout": 30,
       "emptyPasswordInput": false,
-      "encrypt": "Mandatory"
+      "encrypt": "Mandatory",
     },
     {
       "authenticationType": "SqlLogin",
@@ -277,7 +280,7 @@
       "groupId": "ROOT",
       "id": "8780C07B-312D-4F63-9C71-CACF3A31B724",
       "profileSource": 0,
-      "commandTimeout": 30
+      "commandTimeout": 30,
     },
     {
       "authenticationType": "SqlLogin",
@@ -295,7 +298,7 @@
       "database": "",
       "commandTimeout": 30,
       "encrypt": "Mandatory",
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -311,7 +314,7 @@
       "database": "HWSQL",
       "groupId": "C3F9C37B-81C7-441D-846E-30545B8993A0",
       "id": "B0F78E0F-4EB8-4F0B-8C96-9B3E095DA042",
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -327,7 +330,7 @@
       "trustServerCertificate": true,
       "groupId": "C3F9C37B-81C7-441D-846E-30545B8993A0",
       "id": "3239D23D-62E0-483A-993F-2F5CE875F5E3",
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -344,7 +347,7 @@
       "trustServerCertificate": true,
       "id": "3DA757EE-E49B-45A5-8E6E-76238520A3EB",
       "profileSource": 0,
-      "savePassword": true
+      "savePassword": true,
     },
     {
       "authenticationType": "SqlLogin",
@@ -362,7 +365,7 @@
       "displayName": "CFW Server",
       "groupId": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
       "profileSource": 0,
-      "encrypt": "Mandatory"
+      "encrypt": "Mandatory",
     },
     {
       "authenticationType": "SqlLogin",
@@ -379,7 +382,7 @@
       "id": "591151D7-6A68-4FF3-BE69-99D5FD49548C",
       "database": "UPFPOS",
       "commandTimeout": 30,
-      "profileSource": 0
+      "profileSource": 0,
     },
     {
       "authenticationType": "SqlLogin",
@@ -397,7 +400,7 @@
       "trustServerCertificate": true,
       "id": "3085353f-7ad4-41f3-a326-7b0577606dfe",
       "profileSource": 0,
-      "savePassword": true
+      "savePassword": true,
     },
     {
       "authenticationType": "SqlLogin",
@@ -414,7 +417,7 @@
       "profileSource": 0,
       "commandTimeout": 30,
       "savePassword": true,
-      "encrypt": "Mandatory"
+      "encrypt": "Mandatory",
     },
     {
       "authenticationType": "SqlLogin",
@@ -430,7 +433,7 @@
       "groupId": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
       "profileName": "N",
       "trustServerCertificate": true,
-      "id": "0303cbc3-79d1-4043-b370-7b0cbb259030"
+      "id": "0303cbc3-79d1-4043-b370-7b0cbb259030",
     },
     {
       "authenticationType": "SqlLogin",
@@ -447,8 +450,41 @@
       "savePassword": true,
       "trustServerCertificate": true,
       "id": "01fabd82-0780-458d-b585-60b1c6c0b684",
-      "profileSource": 0
-    }
+      "profileSource": 0,
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "applicationIntent": "ReadWrite",
+      "server": "10.130.12.55",
+      "database": "",
+      "user": "upfdba",
+      "password": "",
+      "commandTimeout": 30,
+      "encrypt": "Mandatory",
+      "groupId": "5FE5BCC8-633B-4662-8A25-DFAF3D63EE5F",
+      "profileName": "",
+      "trustServerCertificate": true,
+      "id": "14cc61d0-b8df-4ef1-9707-7e8f333e7163",
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "applicationIntent": "ReadWrite",
+      "server": "10.130.10.28",
+      "database": "",
+      "user": "apijobuser",
+      "password": "",
+      "commandTimeout": 30,
+      "encrypt": "Mandatory",
+      "groupId": "C3F9C37B-81C7-441D-846E-30545B8993A0",
+      "trustServerCertificate": true,
+      "id": "13e67408-69e5-43e3-b3e1-5023ef9b818b",
+      "profileSource": 0,
+      "profileName": "Product Master - PRD",
+    },
   ],
   "mssql.enableQueryHistoryCapture": false,
   "mssql.objectExplorer.groupBySchema": false,
@@ -502,7 +538,6 @@
     "rm": true,
     "tsc": true,
   },
-  "chat.viewSessions.orientation": "stacked",
   "pgsql.serverGroups": [
     {
       "name": "Servers",
@@ -527,27 +562,7 @@
       "password": "",
       "database": "repl",
       "profileName": "repl-dev",
-      "connectionString": "postgres://admin:p%40ssw0rd%23%24%25@10.130.12.59:5432/repl?schema=public",
       "port": "5432",
-      "expiresOn": 0,
-      "sshPassword": "",
-    },
-    {
-      "id": "FEDDB93A-7FDF-433D-BB89-D915BA081053",
-      "groupId": "F620C926-1D8C-45D3-B744-7D3C70F9F809",
-      "authenticationType": "SqlLogin",
-      "connectTimeout": 15,
-      "applicationName": "vscode-pgsql",
-      "clientEncoding": "utf8",
-      "sslmode": "prefer",
-      "sshSavePassword": true,
-      "savePassword": true,
-      "sslRootCertMode": "none",
-      "server": "localhost",
-      "user": "postgres",
-      "password": "",
-      "database": "repl",
-      "profileName": "localhost, postgres (postgres)",
       "expiresOn": 0,
       "sshPassword": "",
     },
@@ -682,4 +697,5 @@
   "markdown-mermaid.languages": ["mermaid"],
   "markdown-mermaid.maxHeight": "100vh",
   "claudeCode.hideOnboarding": true,
+  "chat.viewSessions.orientation": "stacked",
 }

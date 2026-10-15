@@ -23,3 +23,11 @@ export PATH="/Users/kannitphong/.local/bin:$PATH"
 # GO
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# pnpm
+export PNPM_HOME='/Users/kannitphong/Library/pnpm'
+case ":$PATH:" in
+  ":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
