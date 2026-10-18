@@ -24,6 +24,13 @@ export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
 # NVM
 export NVM_DIR="$HOME/.nvm"
 
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+cyan="#2CF9ED"
+blue="#06BCE4"
+
 # fzf
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
@@ -36,9 +43,3 @@ export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 # Bat
 export BAT_THEME=tokyonight_night
 
-# Vim
-export KEYTIMEOUT=1 # Makes switching modes quicker
-export VI_MODE_SET_CURSOR=true 
-
-# ZSH highlighters
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters

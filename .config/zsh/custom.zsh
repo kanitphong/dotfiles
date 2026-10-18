@@ -7,14 +7,16 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
+# Vim
+export KEYTIMEOUT=1 # Makes switching modes quicker
+export VI_MODE_SET_CURSOR=true 
+
 # Custom keys
 bindkey '^E' autosuggest-accept
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-# Homebrew
-eval "$(/usr/local/bin/brew shellenv)"
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Activate syntax highlighting
@@ -37,13 +39,6 @@ eval "$(zoxide init zsh)"
 # fzf
 eval "$(fzf --zsh)"
 source ~/fzf-git.sh/fzf-git.sh
-
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
 
 _fzf_compgen_path() {
   fd --hidden --exclude .git . "$1"
@@ -153,3 +148,8 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# NVM
+# export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

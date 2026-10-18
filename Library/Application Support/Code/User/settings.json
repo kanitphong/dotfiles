@@ -30,9 +30,7 @@
   "terminal.integrated.showExitAlert": false,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.lineHeight": 1,
-  "terminal.integrated.env.osx": {
-    "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "1",
-  },
+  "terminal.integrated.env.osx": {},
   "terminal.integrated.defaultProfile.osx": "tmux",
   "terminal.integrated.shellIntegration.environmentReporting": false,
 
